@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ryan" translatesAutoresizingMaskIntoConstraints="NO" id="vYO-P1-ci6">
-                    <rect key="frame" x="8" y="8" width="584" height="584"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <gestureRecognizers/>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="dkh-4X-Gzs" appends="YES" id="xeF-9x-xiX"/>
@@ -26,10 +26,10 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="vYO-P1-ci6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Jcs-Jz-ycI"/>
-                <constraint firstItem="vYO-P1-ci6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="eH0-lQ-Z3W"/>
-                <constraint firstAttribute="bottom" secondItem="vYO-P1-ci6" secondAttribute="bottom" constant="8" id="eaI-gg-mzV"/>
-                <constraint firstAttribute="trailing" secondItem="vYO-P1-ci6" secondAttribute="trailing" constant="8" id="lhD-3i-nPY"/>
+                <constraint firstItem="vYO-P1-ci6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Jcs-Jz-ycI"/>
+                <constraint firstItem="vYO-P1-ci6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="eH0-lQ-Z3W"/>
+                <constraint firstAttribute="bottom" secondItem="vYO-P1-ci6" secondAttribute="bottom" id="eaI-gg-mzV"/>
+                <constraint firstAttribute="trailing" secondItem="vYO-P1-ci6" secondAttribute="trailing" id="lhD-3i-nPY"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="204" y="341"/>

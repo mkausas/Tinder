@@ -8,6 +8,7 @@
 
 import UIKit
 
+//@IBDesignable
 class DraggableImageView: UIView {
 
     @IBOutlet var contentView: UIView!
@@ -17,6 +18,15 @@ class DraggableImageView: UIView {
         get { return imageView.image }
         set { imageView.image = newValue }
     }
+    
+//    @IBInspectable var cornerRadius: CGFloat? = 0 {
+//        didSet {
+//            if let radius = cornerRadius {
+//                imageView.layer.cornerRadius = radius
+//                imageView.clipsToBounds = true
+//            } 
+//        }
+//    }
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -36,8 +46,12 @@ class DraggableImageView: UIView {
         addSubview(contentView)
         contentView.frame = bounds
         
+        imageView.layer.cornerRadius = 5
+        imageView.clipsToBounds = true
+        
         imageView.userInteractionEnabled = true
-        originalCardPoint = CGPoint(x: imageView.center.x/2, y: imageView.center.y/2)
+//        originalCardPoint = CGPoint(x: imageView.center.x/2 + contentView.center.x / 2, y: imageView.center.y/2 + contentView.center.y / 2)
+        originalCardPoint = CGPoint(x: contentView.center.x + 27, y: contentView.center.y + 27)
         
     }
     
@@ -73,10 +87,42 @@ class DraggableImageView: UIView {
             imageView.transform = CGAffineTransformRotate(imageView.transform, radians)
 
         } else if sender.state == UIGestureRecognizerState.Ended {
-            UIView.animateWithDuration(1, animations: {
-                self.imageView.center = self.originalCardPoint
+            var newPoint: CGPoint
+            
+            if translation.x > 75 {
+                newPoint = CGPoint(x: originalCardPoint.x + 500, y: originalCardPoint.y)
+            } else if translation.x < -75 {
+                newPoint = CGPoint(x: originalCardPoint.x - 500, y: originalCardPoint.y)
+            } else {
+                newPoint = originalCardPoint
+            }
+            
+//            UIView.animateWithDuration(0.5, animations: {
+//                
+//                self.imageView.center = newPoint
+//                self.imageView.transform = CGAffineTransformMakeRotation(0)
+//            })
+            
+            UIView.animateWithDuration(0.5, animations: {
+                
+                self.imageView.center = newPoint
                 self.imageView.transform = CGAffineTransformMakeRotation(0)
+                
+                }, completion: { (success) in
+                    if newPoint.x != self.originalCardPoint.x {
+                        self.imageView.center = self.originalCardPoint
+                        self.imageView.alpha = 0
+                        
+                        
+                        UIView.animateWithDuration(0.25, animations: {
+                            self.imageView.alpha = 1
+                        })
+                        
+                    }
+                    
+                    
             })
+                
         }
     }
     
@@ -90,3 +136,15 @@ class DraggableImageView: UIView {
     */
 
 }
+
+//extension UIView {
+//    @IBInspectable var cornerRadius: CGFloat {
+//        get {
+//            return layer.cornerRadius
+//        }
+//        set {
+//            layer.cornerRadius = newValue
+//            layer.masksToBounds = newValue > 0
+//        }
+//    }
+//}
