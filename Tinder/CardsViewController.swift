@@ -21,27 +21,32 @@ class CardsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    var previousCardPoint: CGPoint!
-    @IBAction func cardPanGestureRecognizer(sender: UIPanGestureRecognizer) {
-
-//        let translation = sender.translationInView(view)
-//        
-//        if sender.state == UIGestureRecognizerState.Began {
-//            NSLog("began")
-//            previousCardPoint = cardImageView.center
-//            
-//        } else if sender.state == UIGestureRecognizerState.Changed {
-//            NSLog("changed")
-//            
-//            var center = previousCardPoint
-//            center.x += translation.x
-////            center.y += translation.y
-//            
-//            cardImageView.center = center
-//        } else if sender.state == UIGestureRecognizerState.Ended {
-//            NSLog("Ended")
-//        }
+    @IBAction func onProfileTap(sender: UITapGestureRecognizer) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let profViewController = storyboard.instantiateViewControllerWithIdentifier("ProfileViewController")
+        
+        modalPresentationStyle = UIModalPresentationStyle.Popover
+        
+        
+        presentViewController(profViewController, animated: true, completion: {
+            print("completed")
+        })        
     }
+    
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+        let vc = segue.destinationViewController as! ProfileViewController
+        
+        vc.profileImageView.image = self.cardImageView.image
+        
+     // Pass the selected object to the new view controller.
+     }
+ 
+
 
 }
 

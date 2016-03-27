@@ -14,6 +14,7 @@
 		BD309AC81CA47E6800118ED9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD309AC61CA47E6800118ED9 /* LaunchScreen.storyboard */; };
 		BD309AD41CA483A400118ED9 /* DraggableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD309AD31CA483A400118ED9 /* DraggableImageView.swift */; };
 		BD309AD61CA4857400118ED9 /* DraggableImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD309AD51CA4857400118ED9 /* DraggableImageView.xib */; };
+		BD5B12601CA87B38004D3391 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5B125F1CA87B38004D3391 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		BD309AC91CA47E6800118ED9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD309AD31CA483A400118ED9 /* DraggableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DraggableImageView.swift; path = ../DraggableImageView.swift; sourceTree = "<group>"; };
 		BD309AD51CA4857400118ED9 /* DraggableImageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DraggableImageView.xib; path = ../DraggableImageView.xib; sourceTree = "<group>"; };
+		BD5B125F1CA87B38004D3391 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				BD309ABD1CA47E6800118ED9 /* AppDelegate.swift */,
 				BD309ABF1CA47E6800118ED9 /* CardsViewController.swift */,
 				BD309AC11CA47E6800118ED9 /* Main.storyboard */,
+				BD5B125F1CA87B38004D3391 /* ProfileViewController.swift */,
 				BD309AC41CA47E6800118ED9 /* Assets.xcassets */,
 				BD309AC61CA47E6800118ED9 /* LaunchScreen.storyboard */,
 				BD309AC91CA47E6800118ED9 /* Info.plist */,
@@ -145,6 +148,7 @@
 			files = (
 				BD309AC01CA47E6800118ED9 /* CardsViewController.swift in Sources */,
 				BD309AD41CA483A400118ED9 /* DraggableImageView.swift in Sources */,
+				BD5B12601CA87B38004D3391 /* ProfileViewController.swift in Sources */,
 				BD309ABE1CA47E6800118ED9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
